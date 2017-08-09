@@ -1,0 +1,61 @@
+@import "cc-ss_colors";
+
+/* Base Styles */
+
+body {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: darken($maroon, 5%);
+  margin: 0;
+
+  h1 {
+    text-align: center;
+    color: lighten($olive, 10%);
+  }
+
+  button {
+    background-color: $yellow;
+    color: lighten($maroon, 10%);
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+    border: 1px solid lighten($maroon, 15%);
+
+    &:hover {
+      color: lighten($maroon, 30%);
+      background-color: lighten($yellow, 25%);
+      border: 1px solid lighten($maroon, 25%);
+    }
+  }
+}
+
+/* Layout Styles */
+
+.l-container {
+  height: 100vh;
+  padding: 0;
+
+  .l-pad {
+    width: 560px;
+    height: 560px;
+    margin: auto;
+    background-color: lighten($maroon, 50%);
+    border: 2px solid $yellow;
+    border-radius: 4px;
+  }
+
+  .l-btns {
+    width: 50%;
+    margin-top: 0.75em;
+  }
+
+  #clear-grd {
+    float: right;
+  }
+
+  .square {
+    border: 1px solid $yellow;
+    float: left;
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
+  }
+}
