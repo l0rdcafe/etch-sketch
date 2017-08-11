@@ -4,7 +4,7 @@ var handlers = {};
 
 model.calcDims = function (size) {
   var divWidth = document.querySelector('.l-pad').clientWidth;
-  return parseFloat((divWidth / size) - 2);
+  return parseFloat((divWidth / size) - 2.0075).toFixed(2);
 };
 
 handlers.colorDrk = function (squ) {
@@ -17,9 +17,10 @@ handlers.colorLite = function (squ) {
 
 handlers.clearGrid = function () {
   var squares = document.querySelectorAll('.square');
-  squares.forEach(function (squ) {
-    handlers.colorLite(squ);
-  });
+  var i;
+  for (i = 0; i < squares.length; i += 1) {
+    handlers.colorLite(squares[i]);
+  }
 };
 
 view.createPad = function (size) {
@@ -56,11 +57,10 @@ view.setUpEvents = function () {
     if (clickedElm.id === 'clear-grd') {
       handlers.clearGrid();
     } else if (clickedElm.id === 'new-grd') {
-      view.createPad(prompt('Please enter a number from 1 to 40'));
+      view.createPad(prompt('Please enter a number from 1 to 40 to set the grid values'));
     }
   });
 };
 
 view.createPad(8);
 view.setUpEvents();
-vents();
