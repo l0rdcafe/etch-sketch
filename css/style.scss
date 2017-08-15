@@ -1,5 +1,8 @@
 @import "cc-ss_colors";
 
+$brk-sml: 480px;
+$brk-md: 767px;
+
 /* Base Styles */
 
 body {
@@ -31,7 +34,7 @@ body {
 /* Layout Styles */
 
 .l-container {
-  height: 100vh;
+  max-height: 100vh;
   padding: 0;
 
   .l-pad {
@@ -41,11 +44,26 @@ body {
     background-color: lighten($maroon, 50%);
     border: 2px solid $yellow;
     border-radius: 4px;
+
+    @media (max-width: $brk-md) {
+      width: 380px;
+      height: 380px;
+    }
+
+    @media (max-width: $brk-sml) {
+      width: 280px;
+      height: 280px;
+    }
   }
 
   .l-btns {
     width: 50%;
     margin-top: 0.75em;
+
+    @media (max-width: $brk-sml) {
+      width: 80%;
+      display: block;
+    }
   }
 
   #clear-grd {
@@ -57,5 +75,11 @@ body {
     float: left;
     -webkit-transition: all 0.1s;
     transition: all 0.1s;
+  }
+}
+
+@media (max-width: $brk-sml) {
+  .container {
+    padding: 0;
   }
 }
