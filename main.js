@@ -51,7 +51,9 @@ view.setUpEvents = function () {
     }
   };
   var touchHover = function (event) {
-    var hoveredElm = event.target;
+    var x = event.changedTouches[0].pageX;
+    var y = event.changedTouches[0].pageY;
+    var hoveredElm = document.elementFromPoint(x, y);
     event.preventDefault();
     if (hoveredElm.className === 'square') {
       handlers.colorDrk(hoveredElm);
