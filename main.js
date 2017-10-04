@@ -52,7 +52,7 @@ view.setUpEvents = function () {
   };
   var btnFtr;
   grid.addEventListener('mouseover', hover);
-  grid.addEventListener('touchstart', hover);
+  grid.addEventListener('touchleave', hover);
   btnFtr = document.querySelector('.l-btns');
   btnFtr.addEventListener('click', function (event) {
     var clickedElm = event.target;
