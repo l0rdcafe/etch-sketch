@@ -44,15 +44,22 @@ view.createPad = function (size) {
 
 view.setUpEvents = function () {
   var grid = document.querySelector('.l-pad');
-  var hover = function (event) {
+  var mouseHover = function (event) {
     var hoveredElm = event.target;
     if (hoveredElm.className === 'square') {
       handlers.colorDrk(hoveredElm);
     }
   };
+  var touchHover = function (event) {
+    var hoveredElm = event.target;
+    event.preventDefault();
+    if (hoveredElm.className === 'square') {
+      handlers.colorDrk(hoveredElm);
+    }
+  };
   var btnFtr;
-  grid.addEventListener('mouseover', hover);
-  grid.addEventListener('touchleave', hover);
+  grid.addEventListener('mouseover', mouseHover);
+  grid.addEventListener('touchmove', touchHover);
   btnFtr = document.querySelector('.l-btns');
   btnFtr.addEventListener('click', function (event) {
     var clickedElm = event.target;
